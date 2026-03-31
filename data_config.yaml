@@ -1,0 +1,58 @@
+datasets:
+  fakemusiccaps:
+    audio_dir: "fakemusiccaps/audio/"
+    metadata_csv: "fakemusiccaps/metadata.csv"
+    columns: ["filename", "folder", "caption", "is_ai"]
+
+  smp_dataset:
+    audio_dir: "smp_dataset_16/"
+    metadata_csv: "smp_dataset_16/Final_dataset_pairs.csv"
+    columns: ["ori_title", "comp_title", "ori_link", "comp_link", "relation", "ori_times", "comp_times", "pair_number", "is_ai"]
+
+  sonics:
+    fake_superset:
+      audio_dir: "sonics/fake_songs/"
+      metadata_csv: "sonics/fake_songs.csv"
+      columns: ["id", "lyrics", "algorithm", "style", "filename", "bit_rate", "duration", "lyrics_feature", "topic", "genre", "mood", "target", "skip_time", "no_vocal", "split", "is_ai"]
+    real_superset:
+      metadata_csv: "sonics/real_songs.csv"
+      columns: ["filename", "title", "artist", "year", "lyrics", "duration", "youtube_id", "label", "artist_overlap", "target", "skip_time", "no_vocal", "split", "is_ai"]
+    lyric_pairs:
+      real_audio_dir: "sonics/pairs_real_16/"
+      fake_audio_dir: "sonics/pairs_fake_16/"
+      metadata_csv: "sonics/lyric_pairs_mapping.csv"
+      columns: ["fake_filename", "real_youtube_id", "similarity"]
+    sibling_pairs:
+      audio_dir: "sonics/extra_fake_16/"
+      metadata_csv: "sonics/sibling_pairs_mapping.csv"
+      columns: ["sibling_0", "sibling_1", "style"]
+    pair_fakes:
+      audio_dir: "sonics/pairs_fake_16/"
+      metadata_csv: "sonics/pair_fake.csv"
+      columns: ["id", "lyrics", "algorithm", "style", "filename", "bit_rate", "duration", "lyrics_feature", "topic", "genre", "mood", "target", "skip_time", "no_vocal", "split", "is_ai"]
+    pair_reals:
+      audio_dir: "sonics/pairs_real_16/"
+      metadata_csv: "sonics/pair_real.csv"
+      columns: ["filename", "title", "artist", "year", "lyrics", "duration", "youtube_id", "label", "artist_overlap", "target", "skip_time", "no_vocal", "split", "is_ai"]
+    sibling_fakes:
+      audio_dir: "sonics/extra_fake_16/"
+      metadata_csv: "sonics/sibling_fake.csv"
+      columns: ["id", "lyrics", "algorithm", "style", "filename", "bit_rate", "duration", "lyrics_feature", "topic", "genre", "mood", "target", "skip_time", "no_vocal", "split", "is_ai"]
+    extra_fakes:
+      audio_dir: "sonics/extra_fake_16/"
+      metadata_csv: "sonics/extra_fake_metadata.csv"
+      columns: ["id", "lyrics", "algorithm", "style", "filename", "bit_rate", "duration", "lyrics_feature", "topic", "genre", "mood", "target", "skip_time", "no_vocal", "split", "is_ai"]
+    extra_reals:
+      audio_dir: "sonics/extra_real_16/"
+      metadata_csv: "sonics/extra_real_metadata.csv"
+      columns: ["filename", "title", "artist", "year", "lyrics", "duration", "youtube_id", "label", "artist_overlap", "target", "skip_time", "no_vocal", "split", "is_ai"]
+
+  echoes:
+      generated:
+        audio_dir: "echoes_processed/{test/train}/{ATA/TTA}/"
+        metadata_csv: "echoes_processed/processed_dataset_manifest.csv"
+        columns: ["path_in_dataset", "original_audio", "generator", "type", "genre", "description", "duration", "split", "processed_path", "processed_original_path"]
+      originals:
+        audio_dir: "echoes_processed/{test/train}/original_fma_tracks/"
+        metadata_csv: "echoes_processed/processed_originals_manifest.csv"
+        columns: ["original_audio", "split", "processed_path"]
