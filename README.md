@@ -2,15 +2,22 @@
 
 Pairwise attribution system for AI-generated music. Given two audio tracks, it outputs a similarity score, an AI detection index per track, and an attribution score indicating whether one track is a derivative of the other.
 
+## Requirements
+
+- **Python 3.13**
+- A virtual environment (`venv`) — strongly recommended to avoid dependency conflicts with system packages
+- GPU with CUDA recommended for MERT/CLAP embedding extraction and model training; CPU-only mode is supported but slow
+
 ## Setup
 
 ```bash
-python -m venv venv
-source venv/bin/activate
+python3.13 -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Key dependencies: `librosa`, `torch`, `transformers`, `numpy`, `soundfile`, `tqdm`, `sentence-transformers`, `openai-whisper`, `laion-clap`, `datasets`.
+> **Note:** `openai-whisper` requires `ffmpeg` to be installed on your system (`sudo apt install ffmpeg` / `brew install ffmpeg`). PyTorch is installed as a CPU build by default; for CUDA support install the appropriate wheel first from [pytorch.org](https://pytorch.org/get-started/locally/) before running `pip install -r requirements.txt`.
 
 All audio must be **16 kHz, mono, PCM_16 WAV**:
 
