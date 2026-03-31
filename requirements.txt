@@ -1,0 +1,32 @@
+# Core ML
+torch
+torchaudio
+
+# Audio
+librosa
+soundfile
+
+# Hugging Face ecosystem
+transformers
+huggingface_hub
+sentence-transformers
+
+# Speech recognition
+openai-whisper
+
+# Data / ML utilities
+numpy
+pandas
+scikit-learn
+scipy
+tqdm
+fsspec
+pyyaml
+
+# Visualisation
+matplotlib
+seaborn
+
+# Data fetching
+yt-dlp
+requests
